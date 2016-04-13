@@ -3,7 +3,6 @@ package com.theark.a5;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,30 +31,34 @@ public class MainActivity extends AppCompatActivity {
 
         int id = v.getId();
         try {
+            double n;
+            if(input_a.getText().toString().equals(""))
+                n = 0.0;
+            else
+                n = Double.parseDouble(input_a.getText().toString());
+
             double n1 = input_a.getText().toString().equals("") ? 0.0 : Double.parseDouble(input_a.getText().toString());
             double n2 = input_b.getText().toString().equals("") ? 0.0 : Double.parseDouble(input_b.getText().toString());
+            double rad = Math.toRadians(n1);
 
             switch (id) {
                 case R.id.sin:
-                    double rad = Math.toRadians(n1);
-                    double value = Math.sin(rad);
-                    ans.setText("" + Math.round(value * 100.0 ) / 100.0);
-                    Log.d("ans sin", value + "----" + rad + "-----" + ans);
+                    ans.setText("" + (Math.sin(rad) ));
                     break;
                 case R.id.cos:
-                    ans.setText("" + Math.round(Math.cos(Math.toRadians(n1))));
+                    ans.setText("" + (Math.cos(rad)  ));
                     break;
                 case R.id.tan:
-                    ans.setText("" + Math.round(Math.tan(Math.toRadians(n1))));
+                    ans.setText("" + (Math.tan(rad)));
                     break;
                 case R.id.cosec:
-                    ans.setText("" + Math.round((double) 1 / Math.sin(Math.toRadians(n1))));
+                    ans.setText("" + (1 / Math.sin(rad) ));
                     break;
                 case R.id.sec:
-                    ans.setText("" + Math.round((double) 1 / Math.cos(Math.toRadians(n1))));
+                    ans.setText("" + (1 / Math.cos(rad) ));
                     break;
                 case R.id.cot:
-                    ans.setText("" + Math.round((double) 1 / Math.tan(Math.toRadians(n1))));
+                    ans.setText("" + (1 / Math.tan(rad) ));
                     break;
 
                 case R.id.plus:
