@@ -1,14 +1,12 @@
 package com.theark.a5;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -28,67 +26,63 @@ public class MainActivity extends AppCompatActivity {
 
         ans = (TextView) findViewById(R.id.ans);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     public void onButtonClick(View v){
 
         int id = v.getId();
         try {
+            double n1 = input_a.getText().toString().equals("") ? 0.0 : Double.parseDouble(input_a.getText().toString());
+            double n2 = input_b.getText().toString().equals("") ? 0.0 : Double.parseDouble(input_b.getText().toString());
+
             switch (id) {
                 case R.id.sin:
-                    double rad = Math.toRadians(Double.parseDouble(input_a.getText().toString()));
+                    double rad = Math.toRadians(n1);
                     double value = Math.sin(rad);
-                    ans.setText("" + value);
-                    Log.d("ans sin" , value+"----"+rad+"-----"+ans);
+                    ans.setText("" + Math.round(value * 100.0 ) / 100.0);
+                    Log.d("ans sin", value + "----" + rad + "-----" + ans);
                     break;
                 case R.id.cos:
-                    ans.setText("" + Math.round(Math.cos(Math.toRadians(Double.parseDouble(input_a.getText().toString())))));
+                    ans.setText("" + Math.round(Math.cos(Math.toRadians(n1))));
                     break;
                 case R.id.tan:
-                    ans.setText("" + Math.round(Math.tan(Math.toRadians(Double.parseDouble(input_a.getText().toString())))));
+                    ans.setText("" + Math.round(Math.tan(Math.toRadians(n1))));
                     break;
                 case R.id.cosec:
-                    ans.setText("" + Math.round((double) 1 / Math.sin(Math.toRadians(Double.parseDouble(input_a.getText().toString())))));
+                    ans.setText("" + Math.round((double) 1 / Math.sin(Math.toRadians(n1))));
                     break;
                 case R.id.sec:
-                    ans.setText("" + Math.round((double) 1 / Math.cos(Math.toRadians(Double.parseDouble(input_a.getText().toString())))));
+                    ans.setText("" + Math.round((double) 1 / Math.cos(Math.toRadians(n1))));
                     break;
                 case R.id.cot:
-                    ans.setText("" + Math.round((double) 1 / Math.tan(Math.toRadians(Double.parseDouble(input_a.getText().toString())))));
+                    ans.setText("" + Math.round((double) 1 / Math.tan(Math.toRadians(n1))));
                     break;
 
-                case R.id.num_dot:
+                case R.id.plus:
+                    ans.setText(""+(n1+n2));
                     break;
-                case R.id.num_zero:
+                case R.id.minus:
+                    ans.setText(""+(n1-n2));
                     break;
-                case R.id.num_one:
+                case R.id.divide:
+                    ans.setText(""+(n1/n2));
                     break;
-                case R.id.num_tw0:
+                case R.id.multiply:
+                    ans.setText(""+(n1*n2));
                     break;
-                case R.id.num_three:
+                case R.id.percentage:
+                    ans.setText(""+(n1/n2)*100);
+                    ans.append("%");
                     break;
-                case R.id.num_four:
-                    break;
-                case R.id.num_five:
-                    break;
-                case R.id.num_six:
-                    break;
-                case R.id.num_seven:
-                    break;
-                case R.id.num_eight:
-                    break;
-                case R.id.num_nine:
+                case R.id.abs:
+                    ans.setText("" + Math.abs(n1));
                     break;
 
-                case R.id.equals:
+                case R.id.clear_a:
+                    input_a.setText("");
+                    break;
+                case R.id.clear_b:
+                    input_b.setText("");
                     break;
             }
         }catch (Exception e){

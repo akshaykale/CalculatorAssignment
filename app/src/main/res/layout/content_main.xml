@@ -15,7 +15,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content">
 
         <EditText
@@ -36,7 +38,27 @@
 
 
     </LinearLayout>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/clear_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="x"
+            android:gravity="center"
+            android:numeric="signed|integer|decimal" />
+        <TextView
+            android:id="@+id/clear_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="x"
+            android:numeric="signed|integer|decimal" />
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -136,31 +158,31 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/num_one"
+            android:id="@+id/plus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onButtonClick"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:text="1"/>
+            android:text="+"/>
 
         <Button
-            android:id="@+id/num_tw0"
+            android:id="@+id/minus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onButtonClick"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:text="2"/>
+            android:text="-"/>
 
         <Button
-            android:id="@+id/num_three"
+            android:id="@+id/multiply"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onButtonClick"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:text="3"/>
+            android:text="*"/>
     </LinearLayout>
 
 
@@ -170,31 +192,31 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/num_four"
+            android:id="@+id/divide"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onButtonClick"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:text="4"/>
+            android:text="/"/>
 
         <Button
-            android:id="@+id/num_five"
+            android:id="@+id/percentage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onButtonClick"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:text="5"/>
+            android:text="%"/>
 
         <Button
-            android:id="@+id/num_six"
+            android:id="@+id/abs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onButtonClick"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:text="6"/>
+            android:text="abs"/>
     </LinearLayout>
 
 
@@ -202,32 +224,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <Button
-            android:id="@+id/num_seven"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onButtonClick"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:text="7"/>
 
-        <Button
-            android:id="@+id/num_eight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onButtonClick"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:text="8"/>
-
-        <Button
-            android:id="@+id/num_nine"
-            android:layout_width="match_parent"
-            android:onClick="onButtonClick"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:text="9"/>
     </LinearLayout>
 
 
@@ -235,23 +232,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <Button
-            android:id="@+id/num_dot"
-            android:layout_width="match_parent"
-            android:onClick="onButtonClick"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:text="."/>
-
-        <Button
-            android:id="@+id/num_zero"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onButtonClick"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:text="0"/>
 
         <Button
             android:id="@+id/equals"
